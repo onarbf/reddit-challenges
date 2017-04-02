@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Intermediate 1</title>
+</head>
+<body>
+    <table>
+        <form name="entry">
+            <tr><td><input type='text' name='todo'/></td></tr>
+            <tr><td><input type="number" name="hour" min="1" max="24"></td></tr>
+            <tr><td><input type="button" onclick="addTodo()" value='Send'></td></tr>
+        </form>
+    </table>
+    
+    <table id="outdiv">
+        
+    </table>
+
+    <script type="text/javascript">
+        function addTodo(){
+            var todo = entry.todo.value;
+            var hour = entry.hour.value;
+            var place = 'todoPlace' + hour;
+            console.log(place);
+            document.getElementById('todoPlace2').innerHTML = todo;
+        }
+            // this is just because I dont want to make the hour list 1 by 1
+        for(let i=1;i<=24;i++){
+                document.getElementById('outdiv').innerHTML += '<tr><td>Time: </td><td>' + i + '</td><td>To do:</td><td id="todoPlace' + i + '">Test</td></tr>'
+            };
+            
+    </script>
+
+</body>
+
+</html>
